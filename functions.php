@@ -31,6 +31,9 @@ function echobroad_enqueue_scripts() {
     // Main stylesheet
     wp_enqueue_style('echobroad-style', get_stylesheet_uri(), array(), '1.0.0');
     
+    // Animations CSS
+    wp_enqueue_style('echobroad-animations', get_template_directory_uri() . '/css/animations.css', array('echobroad-style'), '1.0.0');
+    
     // Font Awesome for icons
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0');
     

@@ -1,0 +1,313 @@
+/* 
+ * EchoBroad Theme Animations
+ * Smooth animations and transitions matching the original site
+ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale Animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse Animation for CTA Buttons */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 80, 0);
+    }
+}
+
+/* Apply animations on scroll */
+.fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Hero Section Animations */
+.hero-title {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero-buttons {
+    animation: fadeIn 1.4s ease-out;
+}
+
+/* Card Hover Effects */
+.feature-card,
+.service-card,
+.product-card,
+.course-card,
+.blog-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover,
+.service-card:hover,
+.product-card:hover,
+.course-card:hover,
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Animations */
+.feature-icon,
+.service-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon,
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Button Animations */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial Card Animation */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* FAQ Accordion Animation */
+.faq-answer {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
+    opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+    opacity: 1;
+}
+
+.faq-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* Brand Logo Animation */
+.brand-logo img {
+    transition: all 0.4s ease;
+}
+
+.brand-logo:hover img {
+    transform: scale(1.1);
+}
+
+/* Scroll to Top Button Animation */
+.scroll-to-top {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Navigation Link Animation */
+.main-navigation a {
+    position: relative;
+}
+
+.main-navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-yellow);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.main-navigation a:hover::after {
+    width: 100%;
+}
+
+/* Product Icon Animation */
+.product-image-icon {
+    transition: all 0.4s ease;
+}
+
+.product-card:hover .product-image-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Course Icon Animation */
+.course-icon {
+    transition: all 0.3s ease;
+}
+
+.course-card:hover .course-icon {
+    transform: rotate(360deg);
+}
+
+/* Blog Category Tag Animation */
+.blog-category {
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover .blog-category {
+    transform: translateX(5px);
+}
+
+/* Read More Link Animation */
+.read-more {
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    transform: translateX(5px);
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Stagger Animation for Grid Items */
+.features-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.features-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.features-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.features-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+.services-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.services-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.services-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.services-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+.testimonials-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.testimonials-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.testimonials-grid > *:nth-child(3) { animation-delay: 0.3s; }
+
+/* Mobile Menu Animation */
+.main-navigation {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* WhatsApp Chat Button Animation */
+.whatsapp-chat {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 998;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-chat:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}

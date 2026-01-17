@@ -27,7 +27,7 @@
                 } else {
                     ?>
                     <a href="<?php echo esc_url(home_url('/')); ?>">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/echobroad-logo.jpg'); ?>" alt="<?php bloginfo('name'); ?>" style="height: 50px;">
                     </a>
                     <?php
                 }
@@ -40,7 +40,7 @@
                     'theme_location' => 'primary',
                     'menu_class'     => 'nav-menu',
                     'container'      => false,
-                    'fallback_cb'    => false,
+                    'fallback_cb'    => 'echobroad_default_menu',
                 ));
                 ?>
                 <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-button">Get Started</a>
@@ -52,3 +52,18 @@
         </div>
     </div>
 </header>
+
+<?php
+// Default menu fallback
+function echobroad_default_menu() {
+    echo '<ul class="nav-menu">';
+    echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/about')) . '">About Us</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/services')) . '">Our Services</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/products')) . '">E-Store</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/courses')) . '">Courses</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/blog')) . '">Blog</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/contact')) . '">Contact</a></li>';
+    echo '</ul>';
+}
+?>

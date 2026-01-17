@@ -1,6 +1,6 @@
 <?php
 /**
- * The footer template file
+ * The footer template file with exact EchoBroad content
  *
  * @package EchoBroad
  */
@@ -23,14 +23,15 @@
                     <li><a href="<?php echo esc_url(home_url('/products')); ?>">E-Store</a></li>
                     <li><a href="<?php echo esc_url(home_url('/courses')); ?>">Courses</a></li>
                     <li><a href="<?php echo esc_url(home_url('/about')); ?>">About Us</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a></li>
                 </ul>
             </div>
             
             <div class="footer-section footer-contact">
                 <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> <?php echo esc_html(get_theme_mod('echobroad_email', 'info@echobroad.com')); ?></p>
-                <p><i class="fas fa-phone"></i> <?php echo esc_html(get_theme_mod('echobroad_phone', '+2348071447959')); ?></p>
-                <p><i class="fas fa-map-marker-alt"></i> <?php echo esc_html(get_theme_mod('echobroad_address', '39 East West Road, Rumuodara, Port Harcourt')); ?></p>
+                <p><i class="fas fa-envelope"></i> info@echobroad.com</p>
+                <p><i class="fas fa-phone"></i> +2349071447959</p>
+                <p><i class="fas fa-map-marker-alt"></i> 30 East West Road, Rumuodara, Port Harcourt</p>
             </div>
             
             <div class="footer-section">
@@ -56,7 +57,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> Echobroad Agency. All rights reserved.</p>
+            <p>&copy; <?php echo date('Y'); ?> EchoBroad Agency. All rights reserved.</p>
             <p>Designed by <a href="<?php echo esc_url(home_url('/')); ?>">EchoBroad Team</a></p>
         </div>
     </div>
@@ -65,6 +66,8 @@
 <div class="scroll-to-top">
     <i class="fas fa-arrow-up"></i>
 </div>
+
+<?php get_template_part('template-parts/whatsapp-chat'); ?>
 
 <?php wp_footer(); ?>
 </body>
